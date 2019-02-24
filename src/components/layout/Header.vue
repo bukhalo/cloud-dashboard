@@ -29,9 +29,9 @@ export default {
       </button>
       <!-- brand -->
       <a href="#/" class="navbar-brand text-lt">
-        <i class="fa fa-btc"></i>
+        <span>🌩</span>
         <img src="img/logo.png" alt="." class="hide" />
-        <span class="hidden-folded m-l-xs">Angulr</span>
+        <span class="hidden-folded m-l-xs">cloud</span>
       </a>
       <!-- / brand -->
     </div>
