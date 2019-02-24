@@ -31,6 +31,11 @@ const router = new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "create-instance" */ "./views/create/Instance.vue")
+    },
+    {
+      path: "/instance/:id",
+      name: "instance",
+      component: () => import("./views/instance/item.vue")
     }
   ]
 });
