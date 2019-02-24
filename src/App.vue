@@ -3,6 +3,7 @@
     <Header></Header>
     <Aside></Aside>
     <div id="content" class="app-content" role="main">
+      <ProgressBar></ProgressBar>
       <div class="app-content-body">
         <div class="bg-light lter b-b wrapper-md">
           <h1 class="m-n font-thin h3">{{ this.$route.name }}</h1>
@@ -28,12 +29,14 @@ import "@/assets/jquery-plugins/ui-toggle.js";
 import Header from "@/components/layout/Header";
 import Aside from "@/components/layout/Aside";
 import Footer from "@/components/layout/Footer";
+import ProgressBar from "@/components/common/ProgressBar";
 
 export default {
   components: {
     Header,
     Aside,
-    Footer
+    Footer,
+    ProgressBar
   }
 };
 </script>

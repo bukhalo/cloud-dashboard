@@ -1,13 +1,15 @@
 import Vue from "vue";
 import Router from "vue-router";
+import progressBar from "@/plugins/progressBar";
 import Home from "./views/Home.vue";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
-  routes: [{
+  routes: [
+    {
       path: "/",
       name: "home",
       component: Home
@@ -19,7 +21,7 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import( /* webpackChunkName: "instances" */ "./views/Instances.vue")
+        import(/* webpackChunkName: "instances" */ "./views/Instances.vue")
     },
     {
       path: "/create/instance",
@@ -28,7 +30,20 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () =>
-        import( /* webpackChunkName: "create-instance" */ "./views/create/Instance.vue")
+        import(/* webpackChunkName: "create-instance" */ "./views/create/Instance.vue")
     }
   ]
 });
+
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+    progressBar.start();
+  }
+  next();
+});
+
+router.afterEach((to, from) => {
+  progressBar.done();
+});
+
+export default router;

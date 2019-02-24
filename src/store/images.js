@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "@/plugins/api";
 
 export default {
   state: {
@@ -12,9 +12,7 @@ export default {
   actions: {
     async get({ commit, rootState }) {
       const projectId = rootState.projects.projectCurrentId;
-      const images = await axios.get(
-        `http://localhost:5000/cloud/project/${projectId}/image`
-      );
+      const images = await api.get(`/cloud/project/${projectId}/image`);
       commit("set", images.data);
     }
   },

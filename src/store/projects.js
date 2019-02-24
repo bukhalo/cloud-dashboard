@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "@/plugins/api";
 
 export default {
   state: {
@@ -15,11 +15,9 @@ export default {
   },
   actions: {
     async get({ commit }) {
-      const projectsIds = await axios.get(
-        "http://localhost:5000/cloud/project"
-      );
+      const projectsIds = await api.get("/cloud/project");
       const projects = await projectsIds.data.map(
-        async id => await axios.get(`http://localhost:5000/cloud/project/${id}`)
+        async id => await api.get(`/cloud/project/${id}`)
       );
       Promise.all(projects).then(res => {
         commit("set", res.map(item => item.data));

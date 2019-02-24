@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "@/plugins/api";
 
 export default {
   state: {
@@ -16,16 +16,12 @@ export default {
   actions: {
     async get({ commit, rootState }) {
       const projectId = rootState.projects.projectCurrentId;
-      const instancesIds = await axios.get(
-        `http://localhost:5000/cloud/project/${projectId}/instance`
+      const instancesIds = await api.get(
+        `/cloud/project/${projectId}/instance`
       );
       const instances = await instancesIds.data.map(
         async item =>
-          await axios.get(
-            `http://localhost:5000/cloud/project/${projectId}/instance/${
-              item.id
-            }`
-          )
+          await api.get(`/cloud/project/${projectId}/instance/${item.id}`)
       );
       Promise.all(instances).then(res => {
         commit("set", res.map(item => item.data));
@@ -34,7 +30,7 @@ export default {
     async create({ commit, rootState }) {
       const projectId = rootState.projects.projectCurrentId;
       const instanceCreateRequest = await axios.post(
-        `http://localhost:5000/cloud/project/${projectId}/instance`,
+        `/cloud/project/${projectId}/instance`,
         {
           serviceName: projectId,
           flavorId: "d31419c1-8e1e-48c2-8a4c-28190650c817",
@@ -50,7 +46,7 @@ export default {
     async destroy({ commit, rootState }, { instanceId }) {
       const projectId = rootState.projects.projectCurrentId;
       const instanceDestroyRequest = await axios.delete(
-        `http://localhost:5000/cloud/project/${projectId}/instance/${instanceId}`
+        `/cloud/project/${projectId}/instance/${instanceId}`
       );
     }
   },
