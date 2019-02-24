@@ -1,29 +1,47 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div class="app app-header-fixed app-aside-fixed">
+    <Header></Header>
+    <Aside></Aside>
+    <div id="content" class="app-content" role="main">
+      <div class="app-content-body">
+        <div class="bg-light lter b-b wrapper-md">
+          <h1 class="m-n font-thin h3">{{ this.$route.name }}</h1>
+        </div>
+        <div class="wrapper-md ng-scope">
+          <router-view />
+        </div>
+      </div>
     </div>
-    <router-view />
+    <Footer></Footer>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import "bootstrap";
+// import "@/assets/jquery-plugins/ui-load.js";
+// import "@/assets/jquery-plugins/ui-jp.config.js";
+// import "@/assets/jquery-plugins/ui-jp.js";
+import "@/assets/jquery-plugins/ui-nav.js";
+import "@/assets/jquery-plugins/ui-toggle.js";
+// import "@/assets/jquery-plugins/ui-client.js";
+
+import Header from "@/components/layout/Header";
+import Aside from "@/components/layout/Aside";
+import Footer from "@/components/layout/Footer";
+
+export default {
+  components: {
+    Header,
+    Aside,
+    Footer
   }
-}
+};
+</script>
+
+<style lang="scss">
+@import "assets/styles/font-awesome.css";
+@import "assets/styles/simple-line-icons.css";
+@import "assets/styles/font.scss";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "assets/styles/app.css";
 </style>
