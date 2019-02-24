@@ -2,11 +2,15 @@ import axios from "axios";
 
 export default {
   state: {
-    projects: []
+    projects: [],
+    projectCurrentId: ""
   },
   mutations: {
     set(state, payload) {
       state.projects = payload;
+    },
+    setActive(state, payload) {
+      state.projectCurrentId = payload;
     }
   },
   actions: {
@@ -19,6 +23,7 @@ export default {
       );
       Promise.all(projects).then(res => {
         commit("set", res.map(item => item.data));
+        commit("setActive", res[0].data.project_id);
       });
     }
   },

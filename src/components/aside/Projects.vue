@@ -1,12 +1,22 @@
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapMutations, mapGetters } from "vuex";
 
 export default {
   beforeMount() {
-    this["projects/get"]();
+    this.get();
   },
   methods: {
-    ...mapActions(["projects/get"])
+    ...mapActions({
+      get: "projects/get",
+      getInstances: "instances/get"
+    }),
+    ...mapMutations({
+      setActive: "projects/setActive"
+    }),
+    selectProject(id) {
+      this.setActive(id);
+      this.getInstances();
+    }
   },
   computed: {
     ...mapGetters({
@@ -22,7 +32,7 @@ export default {
       <span>Проекты</span>
     </li>
     <li v-for="(project, key) in projects" :key="key">
-      <a href="#">
+      <a href="#" @click="selectProject(project.project_id)">
         <i class="fa fa-folder icon"></i>
         <span>{{ project.description }}</span>
       </a>
