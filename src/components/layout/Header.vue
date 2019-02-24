@@ -1,3 +1,13 @@
+<script>
+import Create from "@/components/header/Create";
+
+export default {
+  components: {
+    Create
+  }
+};
+</script>
+
 <template>
   <header id="header" class="app-header navbar" role="menu">
     <!-- navbar header -->
@@ -243,34 +253,7 @@
             </div>
           </div>
         </li>
-        <li class="dropdown">
-          <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-            <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
-            <span translate="header.navbar.new.NEW">New</span>
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <li>
-              <a href="#" translate="header.navbar.new.PROJECT">Projects</a>
-            </li>
-            <li>
-              <a href>
-                <span class="badge bg-info pull-right">5</span>
-                <span translate="header.navbar.new.TASK">Task</span>
-              </a>
-            </li>
-            <li>
-              <a href translate="header.navbar.new.USER">User</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href>
-                <span class="badge bg-danger pull-right">4</span>
-                <span translate="header.navbar.new.EMAIL">Email</span>
-              </a>
-            </li>
-          </ul>
-        </li>
+        <Create></Create>
       </ul>
       <!-- / link and dropdown -->
       <!-- search form -->

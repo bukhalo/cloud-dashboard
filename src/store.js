@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import projects from "@/store/projects";
 import instances from "@/store/instances";
+import images from "@/store/images";
 
 Vue.use(Vuex);
 
@@ -11,6 +12,7 @@ export default new Vuex.Store({
   actions: {},
   modules: {
     projects: projects,
-    instances: instances
+    instances: instances,
+    images: images
   }
 });

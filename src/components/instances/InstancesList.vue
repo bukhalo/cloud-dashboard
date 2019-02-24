@@ -1,7 +1,12 @@
 <script>
-import { mapState } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
+  methods: {
+    ...mapActions({
+      instanceDestroy: "instances/destroy"
+    })
+  },
   computed: {
     ...mapState({
       instances: state => state.instances.instances
@@ -24,6 +29,7 @@ export default {
               <th>IP адреса</th>
               <th>Создан</th>
               <th>Статус</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -55,6 +61,19 @@ export default {
                   class="fa fa-circle text-xs m-t-sm"
                   :class="{ 'text-success': instance.status === 'ACTIVE' }"
                 ></i>
+              </td>
+              <td>
+                <p>
+                  <button class="btn m-b-xs btn-sm btn-info btn-addon">
+                    <i class="fa fa-trash-o"></i>Редактировать
+                  </button>
+                  <button
+                    class="btn btn-sm btn-danger"
+                    @click="instanceDestroy({ instanceId: instance.id })"
+                  >
+                    <i class="fa fa-trash-o"></i> Удалить
+                  </button>
+                </p>
               </td>
             </tr>
           </tbody>
