@@ -1,5 +1,5 @@
 const express = require('express')
-const ovhEu = require('../../endpoints/ovhEu')
+const ovhEu = require('../../config/ovhEu')
 
 const app = express()
 

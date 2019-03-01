@@ -1,5 +1,5 @@
 const express = require('express')
-const billing = require('../../endpoints/billing')
+const billing = require('../../config/billing')
 
 const app = express()
 
