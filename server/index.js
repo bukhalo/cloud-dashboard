@@ -1,37 +1,33 @@
+require('dotenv').config()
+
 const express = require('express')
 const consola = require('consola')
-const { Nuxt, Builder } = require('nuxt')
+
+const config = require('../nuxt.config.js')
+const middleware = require('./middleware')
+const routes = require('./routes')
+const nuxt = require('./middleware/nuxt')
+
 const app = express()
 
-// Import and Set Nuxt.js options
-const config = require('../nuxt.config.js')
-config.dev = !(process.env.NODE_ENV === 'production')
+app.use(middleware)
+app.use(routes)
 
-async function start() {
-  // Init Nuxt.js
-  const nuxt = new Nuxt(config)
+// import Nuxt only last queue!
+app.use(nuxt)
 
-  const {
-    host = process.env.HOST || '127.0.0.1',
-    port = process.env.PORT || 3000
-  } = nuxt.options.server
+const {
+  host = process.env.HOST || '127.0.0.1',
+  port = process.env.PORT || 3000
+} = config.server
 
-  // Build only in dev mode
-  if (config.dev) {
-    const builder = new Builder(nuxt)
-    await builder.build()
-  } else {
-    await nuxt.ready()
-  }
-
-  // Give nuxt middleware to express
-  app.use(nuxt.render)
-
-  // Listen the server
-  app.listen(port, host)
-  consola.ready({
-    message: `Server listening on http://${host}:${port}`,
-    badge: true
+try {
+  app.listen(port, host, () => {
+    consola.ready({
+      message: `Server listening on http://${host}:${port}`,
+      badge: true
+    })
   })
+} catch (e) {
+  consola.error(`Something went wrong ${e}`)
 }
-start()
