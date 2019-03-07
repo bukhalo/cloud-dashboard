@@ -1,11 +1,12 @@
 const express = require('express')
 const axios = require('axios')
+const consola = require('consola')
 
 const app = express()
 
-app.get('/api/auth/login', async (req, res, next) => {
+app.post('/api/auth/login', async (req, res, next) => {
   try {
-    const session = await axios.get(process.env.BILLING_ENDPOINT, {
+    const bill = await axios.get(process.env.BILLING_ENDPOINT, {
       params: {
         out: 'bjson',
         func: 'auth',
@@ -13,17 +14,24 @@ app.get('/api/auth/login', async (req, res, next) => {
         password: req.body.password
       }
     })
-    res.cookie('sid', session.data.model.auth, {
-      expires: new Date(new Date().getTime() + 60 * 60 * 1000), // one hour
-      path: '/',
-      httpOnly: true,
-      secure: !process.env.NODE_ENV === 'development'
-    })
-    res.json({
-      message: 'Authorized success'
-    })
+
+    if (!bill.data.error) {
+      res.cookie('sid', bill.data.model.auth, {
+        expires: new Date(new Date().getTime() + 60 * 60 * 1000), // one hour
+        path: '/',
+        httpOnly: true,
+        secure: !process.env.NODE_ENV === 'development'
+      })
+      res.json({
+        message: 'Authorized successfully'
+      })
+    } else {
+      res.status(403).send({
+        error: bill.data.error
+      })
+    }
   } catch (e) {
-    console.error(e)
+    consola.error(e)
     next()
   }
 })

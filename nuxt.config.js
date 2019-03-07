@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const pkg = require('./package')
 
 module.exports = {
@@ -41,12 +42,17 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['bootstrap/dist/css/bootstrap.css', '@/assets/styles/app.css'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    {
+      src: '~plugins/bootstrap.js',
+      mode: 'client'
+    }
+  ],
 
   /*
    ** Nuxt.js modules
@@ -70,6 +76,13 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jquery: 'jquery',
+        jQuery: 'jquery'
+      })
+    ],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
