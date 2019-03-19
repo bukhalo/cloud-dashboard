@@ -1,5 +1,6 @@
 // @flow
 import React, { Fragment } from "react";
+import styled from "styled-components";
 import TextField from "@atlaskit/textfield";
 import Button, { ButtonGroup } from "@atlaskit/button";
 import { Link } from "react-router-dom";
@@ -11,15 +12,18 @@ import Form, {
   ValidMessage
 } from "@atlaskit/form";
 
+const Wrapper = styled.div`
+  min-width: 550px;
+  background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px;
+  box-sizing: border-box;
+  color: rgb(23, 43, 77);
+  padding: 48px;
+`;
+
 export default () => (
-  <div
-    style={{
-      display: "flex",
-      width: "400px",
-      margin: "0 auto",
-      flexDirection: "column"
-    }}
-  >
+  <Wrapper>
     <Form
       onSubmit={data => {
         // console.log('form data', data);
@@ -111,5 +115,5 @@ export default () => (
         </form>
       )}
     </Form>
-  </div>
+  </Wrapper>
 );
