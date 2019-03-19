@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import ForgotPage from './pages/forgot';
-import LoginPage from './pages/login';
-import SignUpPage from './pages/signup';
-import Header from './components/Header';
-
+import ForgotPage from "./pages/forgot";
+import LoginPage from "./pages/login";
+import SignUpPage from "./pages/signup";
+import Header from "./components/Header";
 
 // const logoSpin = keyframes`
 //   from {
