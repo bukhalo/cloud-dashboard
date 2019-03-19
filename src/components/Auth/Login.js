@@ -9,7 +9,7 @@ import { Checkbox } from "@atlaskit/checkbox";
 import Form, { CheckboxField, Field, FormFooter } from "@atlaskit/form";
 
 const Wrapper = styled.div`
-  min-width: 450px;
+  min-width: 550px;
   background: rgb(255, 255, 255) none repeat scroll 0% 0%;
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 10px;

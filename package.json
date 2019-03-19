@@ -1,6 +1,6 @@
 {
   "name": "dash",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "private": true,
   "dependencies": {
     "@atlaskit/button": "^11.0.2",
