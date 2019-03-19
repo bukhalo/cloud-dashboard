@@ -1,8 +1,12 @@
 {
   "name": "dash",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "dependencies": {
+    "@atlaskit/button": "^11.0.2",
+    "@atlaskit/checkbox": "^6.0.1",
+    "@atlaskit/form": "^5.2.3",
+    "@atlaskit/textfield": "^0.4.0",
     "@babel/core": "7.2.2",
     "@svgr/webpack": "4.1.0",
     "babel-core": "7.0.0-bridge.0",
