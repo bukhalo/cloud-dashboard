@@ -54,6 +54,15 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.0.3",
+    "@storybook/addon-backgrounds": "^5.0.3",
+    "@storybook/addon-console": "^1.1.0",
+    "@storybook/addon-knobs": "^5.0.3",
+    "@storybook/addon-links": "^5.0.3",
+    "@storybook/addon-storysource": "^5.0.3",
+    "@storybook/addon-viewport": "^5.0.3",
+    "@storybook/addons": "^5.0.3",
+    "@storybook/react": "^5.0.3",
     "babel-plugin-styled-components": "^1.10.0",
     "eslint": "^4.19.1 || ^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -64,10 +73,6 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.11.0",
-    "prettier": "^1.16.4",
-    "@storybook/react": "^5.0.3",
-    "@storybook/addon-actions": "^5.0.3",
-    "@storybook/addon-links": "^5.0.3",
-    "@storybook/addons": "^5.0.3"
+    "prettier": "^1.16.4"
   }
 }
