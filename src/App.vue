@@ -1,5 +1,8 @@
 <template>
-  <div class="app app-header-fixed app-aside-fixed">
+  <div
+    v-if="!$route.meta.requiresAuth"
+    class="app app-header-fixed app-aside-fixed"
+  >
     <Header></Header>
     <Aside></Aside>
     <div id="content" class="app-content" role="main">
@@ -14,6 +17,10 @@
       </div>
     </div>
     <Footer></Footer>
+  </div>
+  <div v-else class="app app-header-fixed app-aside-fixed">
+    <router-view />
+    {{ $route }}
   </div>
 </template>
 
@@ -31,8 +38,13 @@ import Aside from "@/components/layout/Aside";
 import Footer from "@/components/layout/Footer";
 import ProgressBar from "@/components/common/ProgressBar";
 
+import { components } from "aws-amplify-vue";
+
+window.LOG_LEVEL = "VERBOSE";
+
 export default {
   components: {
+    ...components,
     Header,
     Aside,
     Footer,

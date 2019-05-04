@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import projects from "@/store/projects";
 import instances from "@/store/instances";
 import images from "@/store/images";
+import desktop from "@/store/desktop";
 
 Vue.use(Vuex);
 
@@ -13,6 +14,7 @@ export default new Vuex.Store({
   modules: {
     projects: projects,
     instances: instances,
-    images: images
+    images: images,
+    desktop: desktop
   }
 });

@@ -1,9 +1,11 @@
 <script>
 import Create from "@/components/header/Create";
+import HeaderProfile from "@/components/header/HeaderProfile";
 
 export default {
   components: {
-    Create
+    Create,
+    HeaderProfile
   }
 };
 </script>
@@ -12,11 +14,7 @@ export default {
   <header id="header" class="app-header navbar" role="menu">
     <!-- navbar header -->
     <div class="navbar-header bg-black">
-      <button
-        class="pull-right visible-xs dk"
-        ui-toggle-class="show"
-        target=".navbar-collapse"
-      >
+      <button class="pull-right visible-xs dk" ui-toggle-class="show" target=".navbar-collapse">
         <i class="glyphicon glyphicon-cog"></i>
       </button>
       <button
@@ -30,7 +28,7 @@ export default {
       <!-- brand -->
       <a href="#/" class="navbar-brand text-lt">
         <span>🌩</span>
-        <img src="img/logo.png" alt="." class="hide" />
+        <img src="img/logo.png" alt="." class="hide">
         <span class="hidden-folded m-l-xs">cloud</span>
       </a>
       <!-- / brand -->
@@ -49,12 +47,7 @@ export default {
           <i class="fa fa-dedent fa-fw text"></i>
           <i class="fa fa-indent fa-fw text-active"></i>
         </a>
-        <a
-          href="#"
-          class="btn no-shadow navbar-btn"
-          ui-toggle-class="show"
-          target="#aside-user"
-        >
+        <a href="#" class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
           <i class="icon-user fa-fw"></i>
         </a>
       </div>
@@ -78,34 +71,22 @@ export default {
                     <ul class="list-unstyled l-h-2x">
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Profile
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Profile
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Post
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Post
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Search
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Search
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Invoice
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Invoice
                         </a>
                       </li>
                     </ul>
@@ -114,34 +95,22 @@ export default {
                     <ul class="list-unstyled l-h-2x">
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Price
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Price
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Lock screen
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Lock screen
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Sign in
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Sign in
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Sign up
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Sign up
                         </a>
                       </li>
                     </ul>
@@ -158,35 +127,23 @@ export default {
                     <ul class="list-unstyled l-h-2x">
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Buttons
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Buttons
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Icons
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Icons
                           <span class="badge badge-sm bg-warning">1000+</span>
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Grid
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Grid
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Widgets
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Widgets
                         </a>
                       </li>
                     </ul>
@@ -195,34 +152,22 @@ export default {
                     <ul class="list-unstyled l-h-2x">
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Bootstap
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Bootstap
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Sortable
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Sortable
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Portlet
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Portlet
                         </a>
                       </li>
                       <li>
                         <a href>
-                          <i
-                            class="fa fa-fw fa-angle-right text-muted m-r-xs"
-                          ></i
-                          >Timeline
+                          <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>Timeline
                         </a>
                       </li>
                     </ul>
@@ -272,7 +217,7 @@ export default {
               typeahead="state for state in states | filter:$viewValue | limitTo:8"
               class="form-control input-sm bg-light no-border rounded padder"
               placeholder="Search projects..."
-            />
+            >
             <span class="input-group-btn">
               <button type="submit" class="btn btn-sm bg-light rounded">
                 <i class="fa fa-search"></i>
@@ -302,18 +247,16 @@ export default {
               <div class="list-group">
                 <a href class="list-group-item">
                   <span class="pull-left m-r thumb-sm">
-                    <img src="img/a0.jpg" alt="..." class="img-circle" />
+                    <img src="img/a0.jpg" alt="..." class="img-circle">
                   </span>
-                  <span class="clear block m-b-none"
-                    >Use awesome animate.css
-                    <br />
+                  <span class="clear block m-b-none">Use awesome animate.css
+                    <br>
                     <small class="text-muted">10 minutes ago</small>
                   </span>
                 </a>
                 <a href class="list-group-item">
-                  <span class="clear block m-b-none"
-                    >1.0 initial released
-                    <br />
+                  <span class="clear block m-b-none">1.0 initial released
+                    <br>
                     <small class="text-muted">1 hour ago</small>
                   </span>
                 </a>
@@ -322,60 +265,16 @@ export default {
                 <a href class="pull-right">
                   <i class="fa fa-cog"></i>
                 </a>
-                <a href="#notes" data-toggle="class:show animated fadeInRight"
-                  >See all the notifications</a
-                >
+                <a
+                  href="#notes"
+                  data-toggle="class:show animated fadeInRight"
+                >See all the notifications</a>
               </div>
             </div>
           </div>
           <!-- / dropdown -->
         </li>
-        <li class="dropdown">
-          <a href="#" data-toggle="dropdown" class="dropdown-toggle clear">
-            <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-              <img src="img/a0.jpg" alt="..." />
-              <i class="on md b-white bottom"></i>
-            </span>
-            <span class="hidden-sm hidden-md">John.Smith</span>
-            <b class="caret"></b>
-          </a>
-          <!-- dropdown -->
-          <ul class="dropdown-menu animated fadeInRight w">
-            <li class="wrapper b-b m-b-sm bg-light m-t-n-xs">
-              <div>
-                <p>300mb of 500mb used</p>
-              </div>
-              <div class="progress progress-xs m-b-none dker">
-                <div
-                  class="progress-bar progress-bar-info"
-                  data-toggle="tooltip"
-                  data-original-title="50%"
-                  style="width: 50%"
-                ></div>
-              </div>
-            </li>
-            <li>
-              <a href>
-                <span class="badge bg-danger pull-right">30%</span>
-                <span>Settings</span>
-              </a>
-            </li>
-            <li>
-              <a ui-sref="app.page.profile">Profile</a>
-            </li>
-            <li>
-              <a ui-sref="app.docs">
-                <span class="label bg-info pull-right">new</span>
-                Help
-              </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a ui-sref="access.signin">Logout</a>
-            </li>
-          </ul>
-          <!-- / dropdown -->
-        </li>
+        <HeaderProfile></HeaderProfile>
       </ul>
       <!-- / navbar right -->
     </div>

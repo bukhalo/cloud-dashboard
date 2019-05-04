@@ -1,4 +1,5 @@
 import api from "@/plugins/api";
+import billing from "@/plugins/billing";
 
 export default {
   state: {
@@ -15,9 +16,14 @@ export default {
   },
   actions: {
     async get({ commit }) {
-      const projectsIds = await api.get("/cloud/project");
-      const projects = await projectsIds.data.map(
-        async id => await api.get(`/cloud/project/${id}`)
+      const projectsIds = await billing.get("", {
+        params: {
+          out: "bjson",
+          func: "cloud-project"
+        }
+      });
+      const projects = await projectsIds.data.elem.map(
+        async item => await api.get(`/cloud/project/${item["project-id"]}`)
       );
       Promise.all(projects).then(res => {
         commit("set", res.map(item => item.data));
