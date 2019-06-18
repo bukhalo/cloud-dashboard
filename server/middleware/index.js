@@ -5,7 +5,7 @@ const bodyParser = require('./body-parser')
 const cookieParser = require('./cookie-parser')
 // import session from 'routes/middlewares/session';
 // import passport from 'routes/middlewares/passport';
-// import apolloServer from 'routes/middlewares/apollo-server';
+const apolloServer = require('./apollo-server')
 
 const app = express()
 
@@ -14,6 +14,6 @@ app.use(bodyParser)
 app.use(cookieParser)
 // app.use(session);
 // app.use(passport);
-// app.use(apolloServer);
+app.use(apolloServer)
 
 module.exports = app
