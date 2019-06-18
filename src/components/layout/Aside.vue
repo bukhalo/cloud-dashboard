@@ -18,10 +18,14 @@ export default {
           <div class="dropdown wrapper">
             <a href="app.page.profile">
               <span class="thumb-lg w-auto-folded avatar m-t-sm">
-                <img src="img/a0.jpg" class="img-full" alt="...">
+                <img src="img/a0.jpg" class="img-full" alt="..." />
               </span>
             </a>
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle hidden-folded">
+            <a
+              href="#"
+              data-toggle="dropdown"
+              class="dropdown-toggle hidden-folded"
+            >
               <span class="clear">
                 <span class="block m-t-sm">
                   <strong class="font-bold text-lt">John.Smith</strong>

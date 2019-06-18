@@ -8,8 +8,12 @@ export default {};
     <div class="panel hbox hbox-auto-xs no-border">
       <div class="col wrapper">
         <i class="fa fa-circle-o text-info m-r-sm pull-right"></i>
-        <h4 class="font-thin m-t-none m-b-none text-primary-lt">Managed Services</h4>
-        <span class="m-b block text-sm text-muted">Service report of this year (updated 1 hour ago)</span>
+        <h4 class="font-thin m-t-none m-b-none text-primary-lt">
+          Managed Services
+        </h4>
+        <span class="m-b block text-sm text-muted"
+          >Service report of this year (updated 1 hour ago)</span
+        >
         <div
           ui-jq="plot"
           ui-options="[
@@ -41,26 +45,40 @@ export default {};
               style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"
             >
               <div
-                style="position: absolute; top: 226px; font: 400 11px/13px &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 11px; text-align: right;"
-              >0</div>
+                style='position: absolute; top: 226px; font: 400 11px/13px "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 11px; text-align: right;'
+              >
+                0
+              </div>
               <div
-                style="position: absolute; top: 188px; font: 400 11px/13px &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 5px; text-align: right;"
-              >20</div>
+                style='position: absolute; top: 188px; font: 400 11px/13px "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 5px; text-align: right;'
+              >
+                20
+              </div>
               <div
-                style="position: absolute; top: 151px; font: 400 11px/13px &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 5px; text-align: right;"
-              >40</div>
+                style='position: absolute; top: 151px; font: 400 11px/13px "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 5px; text-align: right;'
+              >
+                40
+              </div>
               <div
-                style="position: absolute; top: 114px; font: 400 11px/13px &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 5px; text-align: right;"
-              >60</div>
+                style='position: absolute; top: 114px; font: 400 11px/13px "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 5px; text-align: right;'
+              >
+                60
+              </div>
               <div
-                style="position: absolute; top: 76px; font: 400 11px/13px &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 5px; text-align: right;"
-              >80</div>
+                style='position: absolute; top: 76px; font: 400 11px/13px "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 5px; text-align: right;'
+              >
+                80
+              </div>
               <div
-                style="position: absolute; top: 39px; font: 400 11px/13px &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 0px; text-align: right;"
-              >100</div>
+                style='position: absolute; top: 39px; font: 400 11px/13px "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 0px; text-align: right;'
+              >
+                100
+              </div>
               <div
-                style="position: absolute; top: 2px; font: 400 11px/13px &quot;Source Sans Pro&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 0px; text-align: right;"
-              >120</div>
+                style='position: absolute; top: 2px; font: 400 11px/13px "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(161, 167, 172); left: 0px; text-align: right;'
+              >
+                120
+              </div>
             </div>
           </div>
           <canvas
@@ -111,9 +129,10 @@ export default {};
             ></div>
           </div>
         </div>
-        <p
-          class="text-muted"
-        >Dales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis</p>
+        <p class="text-muted">
+          Dales nisi nec adipiscing elit. Morbi id neque quam. Aliquam
+          sollicitudin venenatis
+        </p>
       </div>
     </div>
   </div>

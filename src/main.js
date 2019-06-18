@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import { createProvider } from "./vue-apollo";
 // import Amplify from "aws-amplify";
 // import { components } from "aws-amplify-vue";
 
@@ -22,8 +23,10 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
-  render: h => h(App)
+  apolloProvider: createProvider(),
+
   // components: {
   //   ...components
   // }
+  render: h => h(App)
 }).$mount("#app");

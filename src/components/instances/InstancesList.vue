@@ -50,7 +50,9 @@ export default {
               <div></div>
             </td>
             <td>
-              <div v-for="(ip, key) in instance.ipAddresses" :key="key">{{ ip.ip }}</div>
+              <div v-for="(ip, key) in instance.ipAddresses" :key="key">
+                {{ ip.ip }}
+              </div>
             </td>
             <td>{{ instance.created }}</td>
             <td>
