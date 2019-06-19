@@ -1,5 +1,6 @@
 <script>
-import consola from 'consola'
+import gql from 'graphql-tag'
+
 export default {
   layout: 'auth',
   middleware: 'auth',
@@ -8,21 +9,29 @@ export default {
       username: '',
       password: ''
     },
-    error: {}
+    errors: []
   }),
   methods: {
     async login() {
+      this.errors = []
       try {
-        await this.$axios.$post('/api/auth/login', {
-          username: this.formData.username,
-          password: this.formData.password
+        await this.$apollo.mutate({
+          mutation: gql`
+            mutation($username: String!, $password: String!) {
+              user {
+                logIn(username: $username, password: $password) {
+                  sid
+                }
+              }
+            }
+          `,
+          variables: {
+            username: this.formData.username,
+            password: this.formData.password
+          }
         })
-        this.$router.push('/dashboard')
       } catch (e) {
-        if (e.response) {
-          this.error = e.response.data.error
-        }
-        consola.error(e)
+        this.errors = e.graphQLErrors
       }
     }
   }
@@ -38,14 +47,14 @@ export default {
         <strong>Sign in to get in touch</strong>
       </div>
       <form name="form" class="form-validation" @submit.prevent="login">
-        <div v-if="error" class="text-danger wrapper text-center">
-{{ error.msg }}
-</div>
+        <div v-if="errors" class="text-danger wrapper text-center">
+            <p v-for="(error, key) in errors" v-bind:key="key">{{ error.message }}</p>
+        </div>
         <div class="list-group list-group-sm">
           <div class="list-group-item">
             <input
               v-model="formData.username"
-              type="email"
+              type="text"
               placeholder="Email"
               class="form-control no-border"
               required

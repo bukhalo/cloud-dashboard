@@ -1,0 +1,7 @@
+type Mutation {
+  user: UserMutations
+}
+
+type UserMutations {
+  logIn(username: String!, password: String!): SessionId
+}

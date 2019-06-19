@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc6",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "apollo-server-express": "^2.6.3",
@@ -24,8 +25,10 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "graphql": "^14.3.1",
+    "graphql-tag": "^2.10.1",
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.0",
+    "merge-graphql-schemas": "^1.5.8",
     "nuxt": "^2.4.0",
     "ovh": "^2.0.2",
     "query-string": "^6.2.0"

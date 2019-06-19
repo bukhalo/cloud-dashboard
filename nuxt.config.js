@@ -58,10 +58,26 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/apollo',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa'
   ],
+
+  // Give apollo module options
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://0.0.0.0:3000/api',
+        // See https://www.apollographql.com/docs/link/links/http.html#options
+        httpLinkOptions: {
+          credentials: 'same-origin'
+        },
+        wsEndpoint: null
+      }
+    }
+  },
+
   /*
    ** Axios module configuration
    */
