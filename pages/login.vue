@@ -3,7 +3,6 @@ import gql from 'graphql-tag'
 
 export default {
   layout: 'auth',
-  middleware: 'auth',
   data: () => ({
     formData: {
       username: '',
@@ -30,6 +29,7 @@ export default {
             password: this.formData.password
           }
         })
+        this.$router.push({ path: '/dashboard' })
       } catch (e) {
         this.errors = e.graphQLErrors
       }

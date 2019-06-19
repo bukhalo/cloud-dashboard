@@ -1,20 +1,9 @@
 <script>
 export default {
-  layout: 'dashboard',
-  middleware: 'auth',
-  async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/billing', {
-      params: {
-        out: 'bjson',
-        func: 'desktop'
-      }
-    })
-    return { data: data }
-  }
+  layout: 'dashboard'
 }
 </script>
 
-
 <template>
-  <div />
+  <div></div>
 </template>
