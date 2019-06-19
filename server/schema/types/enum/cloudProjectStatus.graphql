@@ -1,0 +1,8 @@
+# Possible values for project status
+enum cloudProjectProjectStatus {
+  CREATING
+  DELETED
+  DELETING
+  OK
+  SUSPENDED
+}

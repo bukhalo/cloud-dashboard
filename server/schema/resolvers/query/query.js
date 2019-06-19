@@ -12,7 +12,9 @@ module.exports = {
           }
         })
         if (!bill.data.error) {
+          console.log(bill.data.user)
           return {
+            realname: bill.data.user.realname,
             email: bill.data.user.email
           }
         } else {

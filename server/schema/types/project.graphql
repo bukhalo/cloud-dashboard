@@ -1,0 +1,25 @@
+type Query {
+  project(projectId: String!): Project
+  projectCollection: [Project]
+}
+# Project
+type Project {
+  # Project unleashed
+  unleash: Boolean
+  # Current status
+  status: cloudProjectProjectStatus
+  # Description of your project
+  description: String
+  # Expiration date of your project. After this date, your project will be deleted
+  expiration: DateTime
+  # Project creation date
+  creationDate: DateTime
+  # Project access
+  access: cloudAccessType
+  # Project order id
+  orderId: String
+  # Order plan code
+  planCode: String
+  # Project id
+  projectId: String
+}

@@ -1,0 +1,5 @@
+# Possible values for project access type
+enum cloudAccessType {
+  FULL
+  RESTRICTED
+}

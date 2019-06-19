@@ -5,13 +5,13 @@ export default {}
 <template>
   <div>
     <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-      <span>Управление</span>
+      <span>Compute</span>
     </li>
     <li>
-      <router-link to="/instances" class="auto">
+      <nuxt-link to="/compute/instances" class="auto">
         <i class="glyphicon glyphicon-th" />
-        <span>Инстансы</span>
-      </router-link>
+        <span>Instances</span>
+      </nuxt-link>
     </li>
   </div>
 </template>

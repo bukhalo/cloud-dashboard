@@ -13,9 +13,9 @@ const getUser = async token => {
     try {
       const bill = await axios.get(process.env.BILLING_ENDPOINT, {
         params: {
+          '/dashboard/default/start': '',
           auth: token,
-          out: 'bjson',
-          func: 'desktop'
+          out: 'bjson'
         }
       })
       if (!bill.data.error) {

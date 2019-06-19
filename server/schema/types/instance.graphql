@@ -1,0 +1,11 @@
+type Query {
+  instance(projectId: String!, instanceId: String!): Instance
+  instanceCollection(projectId: String!): [Instance]
+}
+
+type Instance {
+  # Instance id
+  id: String
+  # Instance flavor id
+  flavorId: String
+}
