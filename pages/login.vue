@@ -14,7 +14,7 @@ export default {
     async login() {
       this.errors = []
       try {
-        await this.$apollo.mutate({
+        const login = await this.$apollo.mutate({
           mutation: gql`
             mutation($username: String!, $password: String!) {
               user {
@@ -29,6 +29,7 @@ export default {
             password: this.formData.password
           }
         })
+        await this.$apolloHelpers.onLogin(login.data.user.logIn.sid)
         this.$router.push({ path: '/dashboard' })
       } catch (e) {
         this.errors = e.graphQLErrors

@@ -8,12 +8,12 @@ const app = express()
 const typeDefs = schema.typeDefs
 const resolvers = schema.resolvers
 
-const getUser = async req => {
-  if (req.cookies.sid) {
+const getUser = async token => {
+  if (token) {
     try {
       const bill = await axios.get(process.env.BILLING_ENDPOINT, {
         params: {
-          auth: req.cookies.sid,
+          auth: token,
           out: 'bjson',
           func: 'desktop'
         }
@@ -35,11 +35,18 @@ const getUser = async req => {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req, res }) => ({
-    req,
-    res,
-    user: getUser(req)
-  }),
+  context: async ({ req, res }) => {
+    const tokenWithBearer = req.headers.authorization || ''
+    const token = tokenWithBearer.split(' ')[1]
+    const user = await getUser(token)
+    return {
+      req,
+      res,
+      token,
+      tokenWithBearer,
+      user
+    }
+  },
   playground: {
     settings: {
       'request.credentials': 'include',

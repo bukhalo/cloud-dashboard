@@ -4,6 +4,7 @@ import Aside from '@/components/layout/Aside'
 import Footer from '@/components/layout/Footer'
 
 export default {
+  middleware: ['isAuth'],
   components: {
     Header,
     Aside,

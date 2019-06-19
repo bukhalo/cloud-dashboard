@@ -1,5 +1,23 @@
 <script>
-export default {}
+import gql from 'graphql-tag'
+
+export default {
+  apollo: {
+    user: gql`
+      query {
+        user {
+          email
+        }
+      }
+    `
+  },
+  methods: {
+    async onLogout() {
+      await this.$apolloHelpers.onLogout()
+      this.$router.push({ path: '/login' })
+    }
+  }
+}
 </script>
 
 <template>
@@ -9,7 +27,7 @@ export default {}
         <img src="img/a0.jpg" alt="...">
         <i class="on md b-white bottom"/>
       </span>
-      <span class="hidden-sm hidden-md">desktop.user.name</span>
+      <span class="hidden-sm hidden-md">{{ user.email }}</span>
       <b class="caret"/>
     </a>
     <!-- dropdown -->
@@ -44,7 +62,7 @@ export default {}
       </li>
       <li class="divider"/>
       <li>
-        <a ui-sref="access.signin">Logout</a>
+        <a @click="onLogout">Logout</a>
       </li>
     </ul>
     <!-- / dropdown -->

@@ -1,33 +1,24 @@
 const axios = require('axios')
-const consola = require('consola')
 
 module.exports = {
   Query: {
-    user: async () => {
+    user: async (_, defs, { token }) => {
       try {
         const bill = await axios.get(process.env.BILLING_ENDPOINT, {
           params: {
+            '/dashboard/default/start': '',
             out: 'bjson',
-            auth: '',
-            func: 'desktop'
+            auth: token
           }
         })
-
         if (!bill.data.error) {
-          const sid = bill.data.model.auth
-          res.cookie('sid', sid, {
-            expires: new Date(new Date().getTime() + 60 * 60 * 1000), // one hour
-            path: '/',
-            httpOnly: true,
-            secure: process.env.NODE_ENV !== 'development'
-          })
-          return { sid }
+          return {
+            email: bill.data.user.email
+          }
         } else {
-          consola.error(bill.data.error)
           throw new Error(bill.data.error.msg)
         }
       } catch (e) {
-        consola.error(e)
         throw new Error(e)
       }
     }

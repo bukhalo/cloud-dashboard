@@ -1,5 +1,7 @@
 <script>
-export default {}
+export default {
+  middleware: ['isAuth']
+}
 </script>
 
 
