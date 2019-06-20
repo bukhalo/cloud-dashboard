@@ -1,0 +1,17 @@
+type Query {
+  sshKey(projectId: String!, sshKeyId: String!): cloudSshkeySshKey
+  sshKeyCollection(projectId: String!): [cloudSshkeySshKey]
+}
+
+type cloudSshkeySshKey {
+  # SSH key name
+  name: String
+  # SSH key id
+  id: String
+  # SSH public key
+  publicKey: String
+  # SSH key regions
+  regions: [String]
+  # SSH key fingerprint
+  fingerPrint: String
+}

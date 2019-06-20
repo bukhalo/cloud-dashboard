@@ -77,13 +77,13 @@ export default {
             <li class="line dk hidden-folded"/>
 
             <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-              <span>Аккаунт</span>
+              <span>Project managment</span>
             </li>
             <li>
-              <a href="page_profile.html">
+              <nuxt-link to="/project/ssh">
                 <i class="icon-user icon"/>
-                <span>Профиль</span>
-              </a>
+                <span>SSH Keys</span>
+              </nuxt-link>
             </li>
             <li>
               <a href>
