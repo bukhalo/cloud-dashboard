@@ -4,8 +4,12 @@ type Query {
 }
 
 type Instance {
+  # Instance name
+  name: String
   # Instance id
   id: String
   # Instance flavor id
   flavorId: String
+  # Instance region
+  region: String
 }

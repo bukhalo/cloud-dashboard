@@ -1,3 +1,4 @@
+const consola = require('consola')
 const ovhEu = require('../../../config/ovhEu')
 
 module.exports = {
@@ -14,7 +15,10 @@ module.exports = {
             'GET',
             `/cloud/project/${projectId}/instance/${item.id}`
           )
+          consola.log(req)
           return {
+            name: req.name,
+            region: req.region,
             id: req.id,
             flavorId: req.flavorId
           }

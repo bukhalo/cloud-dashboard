@@ -14,4 +14,5 @@ type User {
   realname: String
   email: String
   level: Int
+  balance: Float
 }

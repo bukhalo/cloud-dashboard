@@ -51,6 +51,10 @@ module.exports = {
     {
       src: '~plugins/bootstrap.js',
       mode: 'client'
+    },
+    {
+      src: '~plugins/ant-design.js',
+      mode: 'client',
     }
   ],
 

@@ -21,10 +21,10 @@ export default {
       <span>Projects</span>
     </li>
     <li v-for="(project, key) in projectCollection" :key="key">
-      <a href="#" @click="selectProject(project.projectId)">
+      <nuxt-link :to="`/projects/${project.projectId}`" @click="selectProject(project.projectId)">
         <i class="fa fa-folder icon" />
         <span>{{ project.description || project.projectId }}</span>
-      </a>
+      </nuxt-link>
     </li>
     <li>
       <a href="#">

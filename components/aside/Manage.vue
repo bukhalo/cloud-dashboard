@@ -9,6 +9,7 @@ export default {}
     </li>
     <li>
       <nuxt-link to="/compute/instances" class="auto">
+        <b class="badge bg-success pull-right">Beta</b>
         <i class="glyphicon glyphicon-th" />
         <span>Instances</span>
       </nuxt-link>
