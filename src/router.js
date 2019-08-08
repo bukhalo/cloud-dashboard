@@ -3,16 +3,11 @@ import Router from "vue-router";
 import progressBar from "@/plugins/progressBar";
 import Home from "./views/Home.vue";
 import Login from "./views/Login.vue";
+import SignUp from "./views/SignUp.vue";
 import Axios from "axios";
 import Cookies from "js-cookie";
-import { components, AmplifyEventBus } from "aws-amplify-vue";
-import Amplify, * as AmplifyModules from "aws-amplify";
-import { AmplifyPlugin } from "aws-amplify-vue";
-
-console.log(Vue.prototype.$Amplify);
 
 Vue.use(Router);
-Vue.use(AmplifyPlugin, AmplifyModules);
 
 const router = new Router({
   mode: "history",
@@ -30,6 +25,11 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
+    },
+    {
+      path: "/signup",
+      name: "Sign Up",
+      components: SignUp,
     },
     {
       path: "/instances",
@@ -56,11 +56,6 @@ const router = new Router({
       name: "instance",
       component: () => import("./views/instance/item.vue")
     },
-    {
-      path: "/auth",
-      name: "Authenticator",
-      component: components.Authenticator
-    }
   ]
 });
 

@@ -8,7 +8,7 @@ export default {
   }),
   methods: {
     submitForm() {
-      console.log('test');
+      console.log("test");
       this.$apollo.mutate({
         mutation: gql`
           mutation($username: String!, $password: String) {

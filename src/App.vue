@@ -38,13 +38,8 @@ import Aside from "@/components/layout/Aside";
 import Footer from "@/components/layout/Footer";
 import ProgressBar from "@/components/common/ProgressBar";
 
-import { components } from "aws-amplify-vue";
-
-window.LOG_LEVEL = "VERBOSE";
-
 export default {
   components: {
-    ...components,
     Header,
     Aside,
     Footer,
